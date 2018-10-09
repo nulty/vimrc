@@ -123,6 +123,7 @@ set colorcolumn=90
 execute pathogen#infect()
 filetype plugin indent on " required by Pathogen Plugin Manager
 
+" g:instant_markdown_autostart = 0
 " Theme
 " set background=light
 set background=dark
@@ -170,11 +171,19 @@ let g:gist_open_browser_after_post = 1
 
 " HTML generation using 'emmet-vim'
 " NORMAL mode Ctrl+y then , <C-y,>
+"autocmd FileType eex EmmetInstall
+
+let g:user_emmet_settings = {
+\  'eex' : {
+\  'extends' : 'html',
+\ },
+\}
 
 " Git gutter
 let g:gitgutter_enabled = 1
 let g:gitgutter_eager = 0
-let g:gitgutter_sign_column_always = 1
+"let g:gitgutter_sign_column_always = 1
+set signcolumn=yes
 highlight clear SignColumn
 
 " Searching the file system
@@ -196,6 +205,8 @@ sunmap b
 sunmap e
 " }}}
 
+" LaTeX
+let g:tex_flavor='latex'
 " Mappings {{{
 " Notes...
 "
@@ -346,4 +357,8 @@ fun! SetDiffColors()
   highlight DiffText   cterm=bold ctermfg=white ctermbg=DarkRed
 endfun
 autocmd FilterWritePre * call SetDiffColors()
+
+
+" LivedownPreview
+let g:livedown_browser = "chromium-browser"
 " }}}
