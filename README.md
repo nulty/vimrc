@@ -39,4 +39,15 @@ do
 done
 ```
 
+## Install Powerline fonts for vim-airline
+`$ sudo apt-get install fonts-powerline`
+
+## Install LivedownPreview
+`npm install livedown`
+
+## Install Ripgrep
+```shell
+$ curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb
+$ sudo dpkg -i ripgrep_0.10.0_amd64.deb
+```
 
