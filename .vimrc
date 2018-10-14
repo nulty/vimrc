@@ -151,7 +151,7 @@ colorscheme onedark
 " let g:ctrlp_custom_ignore = '\v[\/]((node_modules)|\.(git|svn|grunt|sass-cache))$'
 
 " Ack (uses Ag behind the scenes)
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'rg --vimgrep'
 
 " Airline (status line)
 let g:airline_powerline_fonts = 1
