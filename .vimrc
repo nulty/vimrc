@@ -266,12 +266,17 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+
 " vim-test
 nmap <silent> <leader>rn :TestNearest<CR>
 nmap <silent> <leader>rf :TestFile<CR>
 nmap <silent> <leader>rs :TestSuite<CR>
 nmap <silent> <leader>rl :TestLast<CR>
 nmap <silent> <leader>ro :TestVisit<CR>
+let test#strategy = "vimux"
+
+" Vimux mappigns
+nmap <silent> <leader>rq :VimuxCloseRunner<CR>
 
 " Tmux style window selection
 map <Leader>ws :ChooseWin<cr>
