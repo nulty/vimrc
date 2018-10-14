@@ -159,6 +159,16 @@ let g:airline_powerline_fonts = 1
 " javascript-libraries-syntax
 let g:used_javascript_libs = 'jquery,underscore,jasmine,vue'
 
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " Gist authorisation settings
 let g:github_user = $GITHUB_USER
 let g:github_token = $GITHUB_TOKEN
