@@ -266,6 +266,13 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Copy file to anon buffer
+" Basename
+nmap <leader>fb :let @+ = expand("%:p:h")<cr>
+" Full path
+nmap <leader>fp :let @+ = expand("%:p")<cr>
+" File name
+nmap <leader>fn :let @+ = expand("%")<cr>
 
 " vim-test
 nmap <silent> <leader>rn :TestNearest<CR>
