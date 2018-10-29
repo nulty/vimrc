@@ -196,6 +196,10 @@ let g:gitgutter_eager = 0
 set signcolumn=yes
 highlight clear SignColumn
 
+" Vim cheating
+nmap <C-c> :bw<cr>
+nmap <C-s> :w<cr>
+
 " Searching the file system
 map <leader>' :NERDTreeToggle<cr>
 map <leader>F :NERDTreeFind<cr>
