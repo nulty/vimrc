@@ -278,6 +278,10 @@ nmap <leader>fp :let @+ = expand("%:p")<cr>
 " File name
 nmap <leader>fn :let @+ = expand("%")<cr>
 
+" In ERB files add vim-surround interpolation
+autocmd FileType eruby let g:surround_45 = "<% \r %>"
+autocmd FileType eruby let g:surround_61 = "<%= \r %>"
+
 " vim-test
 nmap <silent> <leader>rn :TestNearest<CR>
 nmap <silent> <leader>rf :TestFile<CR>
