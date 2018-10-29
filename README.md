@@ -31,6 +31,7 @@ tpope/vim-fugitive
 vim-syntastic/syntastic
 sheerun/vim-polyglot
 tpope/vim-surround
+godlygeek/tabular
 benmills/vimux
 )
 
