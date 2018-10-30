@@ -236,7 +236,7 @@ let g:tex_flavor='latex'
 " to map something in just VISUAL mode use :vmap or :vnoremap
 
 " Clear search buffer
-:nnoremap § :nohlsearch<cr>
+map <leader>/ :nohlsearch<cr>
 
 " Command to use sudo when needed
 cmap w!! %!sudo tee > /dev/null %
