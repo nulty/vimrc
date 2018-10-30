@@ -1,6 +1,18 @@
 # vimrc
 
-## Description
+## Install Vim
+
+```
+$ sudo apt-get install vim-athena
+
+```
+It's advised to install this version of Vim because it comes with many compiler features
+enabled. Scripting language support is required by some of the plugins listed below.
+
+| Plugin    | Dependency |
+|-----------|------------|
+| Command-T | Ruby       |
+| UltiSnip  | Python     |
 
 Listing configuration for my plugins and regular vim config
 
@@ -33,6 +45,8 @@ sheerun/vim-polyglot
 tpope/vim-surround
 godlygeek/tabular
 benmills/vimux
+honza/vim-snippets
+SirVer/ultisnips
 )
 
 for package in plugins[*];
@@ -45,7 +59,7 @@ done
 `$ sudo apt-get install fonts-powerline`
 
 ## Install LivedownPreview
-`npm install livedown`
+`$ npm install livedown`
 
 ## Install Ripgrep
 ```shell

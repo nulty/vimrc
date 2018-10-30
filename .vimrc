@@ -282,6 +282,10 @@ nmap <leader>fn :let @+ = expand("%")<cr>
 autocmd FileType eruby let g:surround_45 = "<% \r %>"
 autocmd FileType eruby let g:surround_61 = "<%= \r %>"
 
+" UltiSnip Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+
 " vim-test
 nmap <silent> <leader>rn :TestNearest<CR>
 nmap <silent> <leader>rf :TestFile<CR>
