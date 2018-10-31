@@ -203,6 +203,7 @@ nmap <C-s> :w<cr>
 " Searching the file system
 map <leader>' :NERDTreeToggle<cr>
 map <leader>F :NERDTreeFind<cr>
+let g:NERDTreeWinSize=25
 
 " Tabularize
 map <Leader>e :Tabularize /=<cr>
