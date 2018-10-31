@@ -47,6 +47,7 @@ godlygeek/tabular
 benmills/vimux
 honza/vim-snippets
 SirVer/ultisnips
+christoomey/vim-tmux-navigator
 )
 
 for package in plugins[*];
