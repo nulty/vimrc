@@ -302,6 +302,9 @@ nmap <silent> <leader>rq :VimuxCloseRunner<CR>
 map <Leader>ws :ChooseWin<cr>
 " }}}
 
+" Golden Ratio
+let g:loaded_golden_ratio = 0
+
 " Commands {{{
 " jump to last cursor
 autocmd BufReadPost *
