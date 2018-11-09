@@ -155,14 +155,10 @@ let g:ackprg = 'rg --vimgrep'
 
 " Airline (status line)
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#syntastic#enabled = 1
 
 " javascript-libraries-syntax
 let g:used_javascript_libs = 'jquery,underscore,jasmine,vue'
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
