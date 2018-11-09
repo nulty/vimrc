@@ -405,3 +405,13 @@ autocmd FilterWritePre * call SetDiffColors()
 " LivedownPreview
 let g:livedown_browser = "chromium-browser"
 " }}}
+
+
+" Show syntax Group for code under the cursor
+nmap <leader>sp :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
