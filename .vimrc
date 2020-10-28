@@ -5,6 +5,8 @@ syntax on
 " Set teh number of colours
 set t_Co=256
 
+set encoding=UTF-8
+
 " Use vim, not vi api
 set nocompatible
 
@@ -76,7 +78,7 @@ set laststatus=2
 set statusline=%f\ %=L:%l/%L\ %c\ (%p%%)
 
 " Hide the toolbar
-set guioptions-=T
+"set guioptions-=T
 
 " UTF encoding
 set encoding=utf-8
@@ -152,10 +154,11 @@ colorscheme onedark
 
 " Ack (uses Ag behind the scenes)
 let g:ackprg = 'rg --vimgrep'
-
+nnoremap <Leader>se :Ack ''<Left>
 " Airline (status line)
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#syntastic#enabled = 1
+let g:airline_theme='onedark'
 
 " javascript-libraries-syntax
 let g:used_javascript_libs = 'jquery,underscore,jasmine,vue'
@@ -179,6 +182,12 @@ let g:gist_open_browser_after_post = 1
 " NORMAL mode Ctrl+y then , <C-y,>
 "autocmd FileType eex EmmetInstall
 
+" CommandT
+let g:CommandTTraverseSCM = 'pwd'
+let g:CommandTFileScanner = 'watchman'
+
+
+
 let g:user_emmet_settings = {
 \  'eex' : {
 \  'extends' : 'html',
@@ -200,6 +209,23 @@ nmap <C-s> :w<cr>
 map <leader>' :NERDTreeToggle<cr>
 map <leader>F :NERDTreeFind<cr>
 let g:NERDTreeWinSize=25
+
+" Vimrc - Edit and Source
+nnoremap <leader>ev :vs $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Quickfix Next to up and down keys
+autocmd FileType qf nnoremap <buffer> <Up> :cp<cr>
+autocmd FileType qf nnoremap <buffer> <Down> :cn<cr>
+
+autocmd FileType Location nnoremap <buffer> <Up> :cp<cr>
+autocmd FileType Location nnoremap <buffer> <Down> :cn<cr>
+"pnnoremap <Up> :cp<cr>
+"nnoremap <Down> :cn<cr>
+
+
+" Easy skip to normal mode
+inoremap jk <ESC>
 
 " Tabularize
 map <Leader>e :Tabularize /=<cr>
@@ -282,6 +308,8 @@ autocmd FileType eruby let g:surround_61 = "<%= \r %>"
 " UltiSnip Trigger configuration. Do not use <tab> if you use
 " https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
+let g:UltiSnipsJumpBackwardTrigger="<c-p>"
 
 " vim-test
 nmap <silent> <leader>rn :TestNearest<CR>
@@ -308,7 +336,7 @@ nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
 nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
 " Golden Ratio
-let g:loaded_golden_ratio = 0
+let g:loaded_golden_ratio = 1
 
 " Commands {{{
 " jump to last cursor
@@ -415,3 +443,11 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
+
+" NERDTrees File highlighting only the glyph/icon
+" test highlight just the glyph (icons) in nerdtree:
+autocmd filetype nerdtree highlight haskell_icon ctermbg=none ctermfg=Red guifg=#ffa500
+autocmd filetype nerdtree highlight html_icon ctermbg=none ctermfg=Red guifg=#ffa500
+autocmd filetype nerdtree highlight go_icon ctermbg=none ctermfg=Red guifg=#ffa500
+
+autocmd BufNewFile,BufRead *_spec.rb set syntax=rspec
